@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Phonebook app.</h1>
+<p>Please Enter the number you want to save bellow</p>
+
+<%= form_for @contact do |f| %>
+
+<p><%= f.label :name %></p>	
+<p><%= f.text_field :name %></p>
+
+<p><%= f.label :number %></p>
+<p><%= f.text_field :number %></p>
+
+<p><%= f.submit %></p>
+
+<% end %>
+
+<p><a href="/contacts/show">View Phonebook</a></p>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Phonebook.</h1>
+<p>This is your reserved calls list</p>
+
+<table border="1px">
+	<tr>
+		<td>Time</td><td>Name</td><td>Number<td>Manage</td>
+	</tr>
+<% @calls.each do |call| %>
+	<tr>
+		<td><%= call.time %></td>
+	
+		<td><%= call.contact.name %></td>
+
+		<td><%= call.contact.number %></td>
+		
+		<td><%= link_to "Edit", edit_call_path(call) %> | <%= link_to "Remove", call, method: :delete, data: { confirm: "Are you sure?" } %></td>
+	</tr>
+<% end %>
+
+
+</table>
+
+<p><a href="/contacts/show">View Phonebook</a> | <a href="/calls">reserve a call</a></p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Phonebook app.</h1>
+<p>This is your contacts list</p>
+
+<table border="1px">
+	<tr>
+		<td>Name</td><td>Number</td><td>Manage</td>
+	</tr>
+<% @contacts.each do |contact| %>
+	<tr>
+		<td><%= contact.name %></td>
+		<td><%= contact.number %></td>
+		<td><%= link_to "Edit", edit_contact_path(contact) %> | <%= link_to "Remove", contact, method: :delete, data: { confirm: "Are you sure?" } %></td>
+	</tr>
+<% end %>
+</table>
+
+<p><a href="/">Add a contact</a> | <a href="/calls/">reserve a call</a></p>
+
+
+
+</body>
+</html>

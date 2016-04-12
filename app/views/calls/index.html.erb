@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Phonebook app.</h1>
+<p>Please select contact and enter a time you want to make that call below:</p>
+
+<%= form_for @call do |f| %>
+
+<p><%= f.label :contact %></p>	
+<p><%= f.collection_select(:number, @contacts, :id, :name, :include_blank => "Please select") %></p>
+
+<p><%= f.label :Time_24hr_format %></p>
+<p><%= f.text_field :time %></p>
+
+<p><%= f.submit %></p>
+
+<% end %>
+
+<p><a href="/contacts/show">View Phonebook</a> | <a href="/calls/show">View Reserved Calls</a></p>
+
+
+</body>
+</html>
