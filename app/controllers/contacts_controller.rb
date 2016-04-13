@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   def index
   	@contact = Contact.new
   	@contacts = Contact.all
+  	@title = "Home"
   end
 
   def create
@@ -16,10 +17,12 @@ class ContactsController < ApplicationController
 
   def show
   	@contacts = Contact.all
+  	@title = "Contacts"
   end
 
   def edit
   	@contact = Contact.find(params[:id])
+  	@title = @contact.name
   end
 
 
