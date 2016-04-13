@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Phonebook - <%= @title %></title>
+  <title>Tuckshop</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag	'all'	%>
+  <%= stylesheet_link_tag	'ie'	%>
+
+  <%= javascript_include_tag	'jquery-1.7.2.min'	%>
+  <%= javascript_include_tag	'jquery.main'	%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
 </head>
 <body>
-<h1>Phonebook</h1>
-<%= yield %>
+	<div id="wrapper">
+		<div id="content">
+			<div class="c1">
+				<div class="controls">
+					<nav class="links">
+						<ul>
+							
+							<li><a href="/contacts/show" class="ico3">Phonebook </a></li>
+							<li><a href="/calls/show" class="ico3">Call Reservations</a></li>
+							<li><a href="#" class="ico3">Call Notes</a></li>
+
+						</ul>
+					</nav>
+					<div class="profile-box">
+						
+						<a href="#" class="btn-on">On</a>
+					</div>
+				</div>
+				<div class="tabs">
+					<div id="tab-1" class="tab">
+						<article>
+							<div class="text-section">
+								<%= yield %>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+		<aside id="sidebar">
+			<strong class="logo"><a href="/contacts/show">lg</a></strong>
+			<ul class="tabset buttons">
+				
+				<li class="active">
+					<a href="/contacts/show" class="ico3"><span>Phonebook</span><em></em></a>
+					<span class="tooltip"><span>Phonebook</span></span>
+				</li>
+				<li>
+					<a href="/calls/show" class="ico3"><span>Call Reservations</span><em></em></a>
+					<span class="tooltip"><span>Call Reservations</span></span>
+				</li>
+				<li>
+					<a href="#" class="ico3"><span>Call Notes</span><em></em></a>
+					<span class="tooltip"><span>Call Notes</span></span>
+				</li>
+				
+			</ul>
+			<span class="shadow"></span>
+		</aside>
+	</div>
+</body>
+</html>
 
 </body>
 </html>
